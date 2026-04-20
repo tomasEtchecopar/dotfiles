@@ -3,7 +3,7 @@
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG="$HOME/.config"
 
-# Crear backup si el destino existe y no es symlink
+# Create backup if destination exists and is not a symlink
 backup() {
   local target="$1"
   if [ -e "$target" ] && [ ! -L "$target" ]; then
@@ -12,7 +12,7 @@ backup() {
   fi
 }
 
-# Crear symlink
+# Create symlink
 link() {
   local src="$1"
   local dst="$2"
@@ -28,7 +28,7 @@ for dir in autostart btop cava fastfetch gtk-3.0 gtk-4.0 hypr Kvantum kitty \
   link "$DOTFILES/.config/$dir" "$CONFIG/$dir"
 done
 
-# Archivos sueltos en .config
+# Standalone files in .config
 link "$DOTFILES/.config/starship.toml"   "$CONFIG/starship.toml"
 link "$DOTFILES/.config/hyprland.conf"   "$CONFIG/hyprland.conf"
 link "$DOTFILES/.config/monitors.conf"   "$CONFIG/monitors.conf"
