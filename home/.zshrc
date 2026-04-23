@@ -18,3 +18,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 [[ -z "$KITTY_WINDOW_ID" ]] || fastfetch
 eval "$(starship init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"

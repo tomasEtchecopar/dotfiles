@@ -5,7 +5,7 @@ WALLPAPER_DIR="$HOME/.config/wallpapers"
 if [ -n "$1" ]; then
   WALLPAPER=$1
 else
-  WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" -o -name "*.gif" -o -name "*.mp4" -o -name "*.mkv" -o -name "*.webm" \) | \
+  WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o  -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.mp4" -o -iname "*.mkv" -o -iname "*.webm" \) | \
     rofi -dmenu -p "Wallpaper" -i)
 fi
 
